@@ -1,0 +1,339 @@
+/* ===== カラーパレット ===== */
+:root {
+    --primary-blue: #87CEEB;
+    --light-blue: #B0E0E6;
+    --soft-white: #FFFFFF;
+    --bg-gradient-start: #E0F7FF;
+    --bg-gradient-end: #F0F8FF;
+    --text-dark: #4A90E2;
+    --shadow-color: rgba(135, 206, 250, 0.3);
+}
+
+/* ===== 基本設定 ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Yu Gothic', 'Hiragino Sans', sans-serif;
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--soft-white) 50%, var(--bg-gradient-end) 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ===== 背景装飾 ===== */
+.floating-shapes {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(135, 206, 250, 0.2), rgba(176, 224, 230, 0.1));
+    animation: float 20s infinite ease-in-out;
+}
+
+.shape-1 {
+    width: 150px;
+    height: 150px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    right: 5%;
+    animation-delay: 3s;
+}
+
+.shape-3 {
+    width: 100px;
+    height: 100px;
+    bottom: 15%;
+    left: 20%;
+    animation-delay: 6s;
+}
+
+.shape-4 {
+    width: 120px;
+    height: 120px;
+    top: 40%;
+    right: 15%;
+    animation-delay: 9s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0.5;
+    }
+    25% {
+        transform: translateY(-30px) translateX(20px) rotate(90deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-50px) translateX(-10px) rotate(180deg);
+        opacity: 0.3;
+    }
+    75% {
+        transform: translateY(-20px) translateX(30px) rotate(270deg);
+        opacity: 0.6;
+    }
+}
+
+/* ===== カード共通スタイル ===== */
+.card {
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 10;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px var(--shadow-color) !important;
+}
+
+/* ===== プロフィールカード ===== */
+.profile-card {
+    border: 3px solid var(--light-blue);
+}
+
+.profile-img-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    border: 5px solid white;
+    position: relative;
+    z-index: 2;
+}
+
+.profile-img i {
+    font-size: 80px;
+    color: white;
+}
+
+.pulse-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-blue);
+    animation: pulse 2s infinite;
+    z-index: 1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0;
+    }
+}
+
+.profile-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-blue), var(--text-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.profile-tagline {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    font-weight: 300;
+}
+
+.bio-badge {
+    background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* ===== リンクカード ===== */
+.links-card {
+    border: 2px solid var(--light-blue);
+}
+
+.section-title {
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+/* ===== ソーシャルボタン ===== */
+.btn-social {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-social span {
+    flex: 1;
+    text-align: left;
+}
+
+.btn-social::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-social:hover::before {
+    left: 100%;
+}
+
+.btn-social:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* IRIAM */
+.btn-iriam {
+    background: linear-gradient(135deg, #87CEEB, #B0E0E6);
+    color: white;
+}
+
+.btn-iriam:hover {
+    background: linear-gradient(135deg, #6BB6D5, #9BCFE0);
+    color: white;
+    border-color: var(--primary-blue);
+}
+
+/* Twitter */
+.btn-twitter {
+    background: linear-gradient(135deg, #1DA1F2, #89CFF0);
+    color: white;
+}
+
+.btn-twitter:hover {
+    background: linear-gradient(135deg, #0C8DE4, #6BB8E0);
+    color: white;
+    border-color: #1DA1F2;
+}
+
+/* TikTok */
+.btn-tiktok {
+    background: linear-gradient(135deg, #000000, #69C9D0);
+    color: white;
+}
+
+.btn-tiktok:hover {
+    background: linear-gradient(135deg, #1a1a1a, #4DB8C0);
+    color: white;
+    border-color: #69C9D0;
+}
+
+/* YouTube */
+.btn-youtube {
+    background: linear-gradient(135deg, #FF0000, #FF6B6B);
+    color: white;
+}
+
+.btn-youtube:hover {
+    background: linear-gradient(135deg, #E60000, #FF5252);
+    color: white;
+    border-color: #FF0000;
+}
+
+/* Twitch */
+.btn-twitch {
+    background: linear-gradient(135deg, #9146FF, #B19CD9);
+    color: white;
+}
+
+.btn-twitch:hover {
+    background: linear-gradient(135deg, #7C2FE6, #9D7DC9);
+    color: white;
+    border-color: #9146FF;
+}
+
+/* ===== フッター ===== */
+.footer-text {
+    color: var(--primary-blue);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 768px) {
+    .profile-name {
+        font-size: 2rem;
+    }
+    
+    .profile-img,
+    .pulse-ring {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .profile-img i {
+        font-size: 60px;
+    }
+    
+    .btn-social {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-body {
+        padding: 2rem 1.5rem !important;
+    }
+    
+    .profile-name {
+        font-size: 1.75rem;
+    }
+}
