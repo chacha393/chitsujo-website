@@ -1,0 +1,247 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --sky:      #B3E8F8;
+  --sky-mid:  #7DD6F4;
+  --sky-deep: #3BB8E8;
+  --white:    #FFFFFF;
+  --offwhite: #F0FAFF;
+  --dark:     #2A6A8A;
+  --soft:     #6ABCD8;
+}
+
+html, body { height: 100%; }
+
+body {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(175deg, #E8F7FF 0%, #C8EDFB 50%, #A8DFF6 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding: 24px 16px;
+}
+
+/* ── 雲 ── */
+.clouds { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50px;
+  opacity: 0.75;
+  animation: drift linear infinite;
+}
+.cloud::before, .cloud::after {
+  content: '';
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+.cloud:nth-child(1) { width:120px; height:40px; top:8%;  left:-130px; animation-duration:22s; }
+.cloud:nth-child(1)::before { width:60px; height:60px; top:-30px; left:15px; }
+.cloud:nth-child(1)::after  { width:45px; height:45px; top:-22px; left:55px; }
+
+.cloud:nth-child(2) { width:90px; height:30px; top:20%; left:-100px; animation-duration:18s; animation-delay:-8s; opacity:0.5; }
+.cloud:nth-child(2)::before { width:45px; height:45px; top:-22px; left:12px; }
+.cloud:nth-child(2)::after  { width:35px; height:35px; top:-16px; left:45px; }
+
+.cloud:nth-child(3) { width:150px; height:50px; top:65%; left:-160px; animation-duration:26s; animation-delay:-12s; }
+.cloud:nth-child(3)::before { width:75px; height:75px; top:-38px; left:18px; }
+.cloud:nth-child(3)::after  { width:55px; height:55px; top:-28px; left:75px; }
+
+.cloud:nth-child(4) { width:70px; height:25px; top:80%; left:-80px; animation-duration:20s; animation-delay:-5s; opacity:0.45; }
+.cloud:nth-child(4)::before { width:35px; height:35px; top:-18px; left:8px; }
+.cloud:nth-child(4)::after  { width:28px; height:28px; top:-12px; left:32px; }
+
+@keyframes drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(100vw + 200px)); }
+}
+
+/* ── キラキラ星 ── */
+.stars { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+
+.star {
+  position: absolute;
+  background: white;
+  clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  animation: twinkle ease-in-out infinite;
+}
+.star:nth-child(1) { width:14px; height:14px; top:12%; left:15%; animation-duration:2.4s; }
+.star:nth-child(2) { width:10px; height:10px; top:25%; left:82%; animation-duration:3.1s; animation-delay:-1s; }
+.star:nth-child(3) { width:16px; height:16px; top:70%; left:10%; animation-duration:2.8s; animation-delay:-2s; }
+.star:nth-child(4) { width:8px;  height:8px;  top:75%; left:88%; animation-duration:2.2s; animation-delay:-0.5s; }
+.star:nth-child(5) { width:12px; height:12px; top:90%; left:50%; animation-duration:3.5s; animation-delay:-1.5s; }
+
+@keyframes twinkle {
+  0%,100% { opacity:0.2; transform:scale(0.8) rotate(0deg); }
+  50%      { opacity:0.9; transform:scale(1.2) rotate(20deg); }
+}
+
+/* ── メインカード ── */
+.card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 32px;
+  padding: clamp(32px, 8vw, 56px) clamp(24px, 8vw, 56px);
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  border: 2.5px solid rgba(255,255,255,0.9);
+  box-shadow:
+    0 8px 32px rgba(59,184,232,0.18),
+    0 2px 8px rgba(59,184,232,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  animation: pop-in 0.8s cubic-bezier(.34,1.56,.64,1) both;
+}
+
+@keyframes pop-in {
+  from { opacity:0; transform: scale(0.7) translateY(30px); }
+  to   { opacity:1; transform: scale(1) translateY(0); }
+}
+
+/* ── キャラクター ── */
+.character {
+  font-size: clamp(4rem, 15vw, 5.5rem);
+  display: block;
+  margin-bottom: 4px;
+  animation: swim 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(59,184,232,0.3));
+}
+
+@keyframes swim {
+  0%,100% { transform: translateY(0) rotate(-4deg); }
+  50%      { transform: translateY(-12px) rotate(4deg); }
+}
+
+/* ── タイトル ── */
+h1 {
+  font-size: clamp(1.4rem, 6vw, 2rem);
+  font-weight: 900;
+  color: var(--dark);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+h1 span {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--sky-deep), var(--soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── サブテキスト ── */
+.sub {
+  font-size: clamp(0.85rem, 3.5vw, 0.95rem);
+  color: var(--soft);
+  line-height: 1.9;
+  margin-bottom: 28px;
+}
+
+/* ── タグ ── */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.tag {
+  background: var(--offwhite);
+  border: 2px solid var(--sky-mid);
+  color: var(--dark);
+  border-radius: 99px;
+  padding: 6px 16px;
+  font-size: clamp(0.75rem, 3vw, 0.85rem);
+  font-weight: 700;
+  white-space: nowrap;
+  animation: fade-up 0.6s ease both;
+}
+.tag:nth-child(1) { animation-delay: 0.5s; }
+.tag:nth-child(2) { animation-delay: 0.65s; }
+.tag:nth-child(3) { animation-delay: 0.80s; }
+
+@keyframes fade-up {
+  from { opacity:0; transform:translateY(12px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ── プログレスバー ── */
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--soft);
+  margin-bottom: 8px;
+}
+.progress-wrap {
+  background: var(--sky);
+  border-radius: 99px;
+  height: 18px;
+  overflow: hidden;
+  margin-bottom: 6px;
+  box-shadow: inset 0 2px 4px rgba(59,184,232,0.2);
+}
+.progress-bar {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--sky-mid), var(--sky-deep));
+  width: 70%;
+  position: relative;
+  animation: grow 1.2s cubic-bezier(.34,1.2,.64,1) 0.4s both;
+  box-shadow: 0 0 12px rgba(59,184,232,0.5);
+}
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 3px; left: 8px; right: 8px;
+  height: 5px;
+  border-radius: 99px;
+  background: rgba(255,255,255,0.45);
+}
+@keyframes grow {
+  from { width: 0; }
+  to   { width: 70%; }
+}
+
+/* ── ウェーブドット ── */
+.wave-wrap {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.wave-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--sky-mid);
+  animation: wave-bounce 1.4s ease-in-out infinite;
+}
+.wave-dot:nth-child(2) { animation-delay:0.15s; background:var(--sky-deep); }
+.wave-dot:nth-child(3) { animation-delay:0.30s; }
+.wave-dot:nth-child(4) { animation-delay:0.45s; background:var(--sky-deep); }
+.wave-dot:nth-child(5) { animation-delay:0.60s; }
+
+@keyframes wave-bounce {
+  0%,100% { transform:translateY(0);    opacity:0.5; }
+  50%      { transform:translateY(-8px); opacity:1; }
+}
+
+/* ── フッター ── */
+.footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  font-size: 0.75rem;
+  color: var(--soft);
+  opacity: 0.7;
+}
