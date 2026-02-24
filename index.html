@@ -10,8 +10,8 @@
 </head>
 <body> 
 
-  <div class="splash" id="splash">
-  <img src="assets/images/logo.png" alt="ロゴ" class="splash-logo">
+  <div class="splash" id="splash" aria-hidden="true">
+  <img src="assets/images/logo.png" alt="秩序めあのロゴ" class="splash-logo" width="200" height="200">
   </div>
 
   <div class="clouds">
@@ -30,24 +30,24 @@
   </div>
 
   <div class="card">
-    <span class="character">🦕</span>
+    <img src="assets/images/mini-character.png" alt="ミニキャラ" class="character">
 
-    <h1><span>ただいま準備中</span> です🌀</h1>
-
+    <h1><span>ただいま準備中</span>です🌀</h1>
     <p class="sub">
       もう少しだけ待っていてね💙
     </p>
 
     <div class="tags">
-      <span class="tag">✨ 絶賛制作中</span>
+      <span class="tag">🚧 絶賛制作中</span>
       <span class="tag">🎨 デザイン中</span>
-      <span class="tag">💙 もうすぐ！</span>
+      <span class="tag">🦕 もうすぐ！</span>
     </div>
 
     <div class="progress-label">
       <span>🐾 進捗</span>
       <span>30%</span>
     </div>
+
     <div class="progress-wrap">
       <div class="progress-bar"></div>
     </div>
@@ -61,13 +61,12 @@
     </div>
   </div>
 
-  <p class="footer">2026 5-omochi-5</p>
+  <p class="footer">©2026 秩序めあ</p>
 
   <script>
-    window.addEventListener('load', function () {
-      setTimeout(function () {
-        document.getElementById('splash').classList.add('hide');
-      }, 1800); // ← 表示時間（ミリ秒）1800 = 1.8秒
+    window.addEventListener('load', function()
+    {
+      setTimeout(function() {document.getElementById('splash').classList.add('hide');}, 1800);
     });
   </script>
 

@@ -109,9 +109,10 @@ body {
 
 /* ── キャラクター ── */
 .character {
-  font-size: clamp(4rem, 15vw, 5.5rem);
+  width: clamp(100px, 40vw, 180px);  /* ← 横幅で大きさを指定 */
+  height: auto;
   display: block;
-  margin-bottom: 4px;
+  margin: 0 auto 4px;
   animation: swim 3s ease-in-out infinite;
   filter: drop-shadow(0 4px 8px rgba(59,184,232,0.3));
 }
@@ -209,7 +210,7 @@ h1 span {
 }
 @keyframes grow {
   from { width: 0; }
-  to   { width: 70%; }
+  to   { width: 30%; }
 }
 
 /* ── ウェーブドット ── */
