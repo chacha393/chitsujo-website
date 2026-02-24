@@ -194,7 +194,7 @@ h1 span {
   height: 100%;
   border-radius: 99px;
   background: linear-gradient(90deg, var(--sky-mid), var(--sky-deep));
-  width: 70%;
+  width: 30%;
   position: relative;
   animation: grow 1.2s cubic-bezier(.34,1.2,.64,1) 0.4s both;
   box-shadow: 0 0 12px rgba(59,184,232,0.5);
@@ -244,4 +244,30 @@ h1 span {
   font-size: 0.75rem;
   color: var(--soft);
   opacity: 0.7;
+}
+
+
+/* ── スプラッシュ ── */
+.splash {
+  position: fixed;
+  inset: 0;
+  background: #E8F7FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+.splash.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+.splash-logo {
+  width: clamp(160px, 50vw, 280px);
+  height: auto;
+  animation: splash-pop 0.8s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes splash-pop {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
 }
