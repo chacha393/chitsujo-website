@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="秩序めあのプロフィールや活動先を見られるトップページです。"
+    content="秩序めあの公式サイトです。"
   >
   <title>秩序めあ | CHITSUJO-WEBSITE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,35 +32,35 @@
       </a>
 
       <nav class="site-nav" aria-label="ページナビゲーション">
-        <a href="#pickup">Pick Up</a>
+        <a href="index_main.html">Top</a>
         <!-- TODO: Diary is postponed for now.
-        <a href="#diary">Diary</a>
+        <a href="#diary-list">Diary</a>
         -->
         <a href="profile.html">Profile</a>
-        <a href="#links">Links</a>
+        <!-- TODO: Gallery is postponed for now.
+        <a href="gallery.html">Gallery</a>
+        -->
       </nav>
     </header>
 
+    <!-- TODO: Diary page is postponed for now.
     <main class="page-main">
       <section class="hero">
         <div class="hero__copy">
-          <p class="hero__eyebrow">CHITSUJO-WEBSITE</p>
-          <h1 class="hero__title">秩序めあ</h1>
-          <p class="hero__catch">秩序を~乱すな~❕ﾋﾟﾋﾟｰｯ❕⚡️</p>
-          <p class="hero__lead">みつけてくれてありがとうっ。プロフィールや活動先をここから見られます。</p>
+          <p class="hero__eyebrow">Diary</p>
+          <h1 class="hero__title">日記</h1>
+          <p class="hero__catch">日々のことをまとめて見られるページ</p>
+          <p class="hero__lead">写真やことばを、ここにまとめて残していきます。</p>
 
-          <div class="hero__actions hero__actions--links" id="links">
-            <a class="button button--x" href="https://x.com/5_omochi_5?s=21" target="_blank" rel="noreferrer noopener">X</a>
-            <a class="button button--youtube" href="https://youtube.com/@chitsujomea?si=fU7vwQaMJaIpg37N" target="_blank" rel="noreferrer noopener">YouTube</a>
-            <a class="button button--twitch" href="https://www.twitch.tv/mamorumea" target="_blank" rel="noreferrer noopener">Twitch</a>
-            <a class="button button--iriam" href="https://web.iriam.app/s/user/A3y2xJIKjQ?uuid=2835536a" target="_blank" rel="noreferrer noopener">IRIAM</a>
-            <a class="button button--x" href="https://x.com/mamoruzomea?s=21" target="_blank" rel="noreferrer noopener">X Sub</a>
-            <a class="button button--tiktok" href="https://www.tiktok.com/@chitsujyomea?_r=1&_t=ZS-95HPJg1EiFY" target="_blank" rel="noreferrer noopener">TikTok</a>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#diary-list">日記を見る</a>
+            <a class="button button--secondary" href="index_main.html">Topへ戻る</a>
+            <a class="button button--ghost" href="https://x.com/5_omochi_5?s=21" target="_blank" rel="noreferrer noopener">Xへ</a>
           </div>
         </div>
 
         <div class="hero__visual">
-          <span class="hero__badge">2026.04.13 debut</span>
+          <span class="hero__badge">Diary Page</span>
           <div class="hero__frame">
             <div class="hero__halo" aria-hidden="true"></div>
             <img class="hero__logo" src="assets/images/ui/logo/logo.png" alt="" aria-hidden="true">
@@ -69,55 +69,25 @@
         </div>
       </section>
 
-      <section class="pickup" id="pickup">
-        <div class="section-head">
-          <p class="section-head__eyebrow">Pick Up</p>
-          <h2>Tag / Mama</h2>
-        </div>
-
-        <div class="pickup__grid">
-          <article class="pickup-card">
-            <span class="pickup-card__label">Tag</span>
-            <strong>#めあにめは</strong>
-            <p>総合タグ</p>
-          </article>
-
-          <article class="pickup-card">
-            <span class="pickup-card__label">Fanart</span>
-            <strong>#めはあるか</strong>
-            <p>使ってくれるとうれしいです</p>
-          </article>
-
-          <article class="pickup-card">
-            <span class="pickup-card__label">Mama</span>
-            <strong>とりうら 様</strong>
-            <p>大好きママ</p>
-          </article>
-        </div>
-      </section>
-
-      <!-- TODO: Diary is postponed for now.
-      <section class="feed-section" id="diary">
+      <section class="feed-section" id="diary-list">
         <div class="section-head">
           <p class="section-head__eyebrow">Diary</p>
-          <h2>日々のこと</h2>
-          <p class="section-head__text">新しい日記をここから見られます。</p>
+          <h2>日々の記録</h2>
         </div>
 
-        <div class="feed-grid" data-diary-list data-diary-limit="2" aria-live="polite">
+        <div class="feed-grid" data-diary-list aria-live="polite">
           <article class="empty-card">
             <strong>まだ日記はありません。</strong>
             <p>日記データを追加するとここに表示されます。</p>
           </article>
         </div>
-
-        <div class="hero__actions">
-          <a class="button button--ghost" href="diary.html">日記をまとめて見る</a>
-        </div>
       </section>
-      -->
 
       <section class="link-band">
+        <a class="link-band__card" href="index_main.html">
+          <span>Top</span>
+          <strong>トップへ戻る</strong>
+        </a>
         <a class="link-band__card" href="profile.html">
           <span>Profile</span>
           <strong>プロフィールを見る</strong>
@@ -128,12 +98,9 @@
           <strong>イラストを見る</strong>
         </a>
         -->
-        <a class="link-band__card link-band__card--booth" href="https://5-omochi-5.booth.pm/" target="_blank" rel="noreferrer noopener">
-          <span>BOOTH</span>
-          <strong>グッズを見る</strong>
-        </a>
       </section>
     </main>
+    -->
   </div>
 
   <!-- TODO: Diary is postponed for now.

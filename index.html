@@ -11,7 +11,7 @@
 <body> 
 
   <div class="splash" id="splash" aria-hidden="true">
-  <img src="assets/images/logo.png" alt="秩序めあのロゴ" class="splash-logo" width="200" height="200">
+  <img src="assets/images/ui/logo/logo.png" alt="秩序めあのロゴ" class="splash-logo" width="200" height="200">
   </div>
 
   <div class="clouds">
@@ -30,7 +30,7 @@
   </div>
 
   <div class="card">
-    <img src="assets/images/mini-character.png" alt="ミニキャラ" class="character">
+    <img src="assets/images/character/mini/mini-character.png" alt="ミニキャラ" class="character">
 
     <h1><span>ただいま準備中</span>です🌀</h1>
     <p class="sub">
@@ -66,9 +66,14 @@
   <script>
     window.addEventListener('load', function()
     {
-      setTimeout(function() {document.getElementById('splash').classList.add('hide');}, 1800);
+      setTimeout(function() {
+        document.getElementById('splash').classList.add('hide');
+        document.body.classList.add('content-visible');
+      }, 1800);
     });
   </script>
+
+  <script src="js/entry-logo.js" defer></script>
 
 </body>
 </html>

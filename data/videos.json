@@ -1,0 +1,12 @@
+{
+  "entries": [
+    {
+      "sample": true,
+      "date": "2026-03-31",
+      "title": "Video title",
+      "text": "Write a short note about the video here.",
+      "youtube_url": "https://www.youtube.com/watch?v=VIDEO_ID",
+      "x_url": "https://x.com/5_omochi_5/status/0000000000000000000"
+    }
+  ]
+}

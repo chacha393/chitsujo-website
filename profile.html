@@ -3,80 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プロフィール｜秩序めあ</title>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta
+    name="description"
+    content="秩序めあのプロフィール、タグ、好きなもの、活動リンクを掲載しています。"
+  >
+  <title>プロフィール | 秩序めあ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
   <link rel="stylesheet" href="css/profile.css">
 </head>
-<body>
+<body id="top">
+  <div class="page-spark page-spark--left" aria-hidden="true"></div>
+  <div class="page-spark page-spark--right" aria-hidden="true"></div>
+  <div class="page-stars" aria-hidden="true"></div>
 
-  <h1 class="page-title">プロフィール</h1>
-
-  <div class="layout">
-
-    <!-- 上段：立ち絵 ＋ 右列 -->
-    <div class="top-row">
-      <div class="left-col">
-        <!-- 立ち絵 -->
-        <div class="card art-card">
-          <img class="art" src="assets/images/mini-character.png" alt="立ち絵">
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index_main.html" aria-label="秩序めあのトップページ">
+        <img src="assets/images/ui/logo/logo.png" alt="秩序めあのロゴ" width="84" height="84">
+        <div class="brand__copy">
+          <span class="brand__eyebrow">CHITSUJO-WEBSITE</span>
+          <strong class="brand__name">秩序めあ</strong>
         </div>
-        <!-- ロゴ -->
-        <div class="card logo-card">
-          <img src="assets/images/logo.png" alt="ロゴ">
-        </div>
-      </div>
+      </a>
 
-      <!-- 右列：名前＋プロフ情報 -->
-      <div class="right-col">
+      <nav class="site-nav" aria-label="プロフィールナビゲーション">
+        <a href="#data">Data</a>
+        <a href="#tags">Tags</a>
+        <a href="#links">Links</a>
+        <a href="index_main.html">Top</a>
+      </nav>
+    </header>
 
-        <!-- 名前 -->
-        <div class="card name-card">
-          <span class="name-ruby">ちつじょ　めあ</span>
-          <span class="name-main">秩序　めあ</span>
-        </div>
+    <main class="page-main">
+      <section class="hero profile-hero" aria-labelledby="profile-title">
+        <div class="hero__copy profile-hero__copy">
+          <p class="hero__eyebrow">Official Profile</p>
+          <p class="profile-hero__ruby">ちつじょ めあ / CHITSUJO MEA</p>
+          <h1 class="hero__title profile-hero__title" id="profile-title">秩序めあ</h1>
+          <p class="hero__lead">
+            配信やSNSを中心に活動しているインターネットアイドルです。
+            はじめましての人も、いつもの人も、ここからめあのことを知ってくれたらうれしいです。
+          </p>
 
-        <!-- プロフ情報 -->
-        <div class="card profile-card">
-          <h2>プロフィール</h2>
-          <dl class="profile-list">
-            <div class="profile-row">
-              <dt>デビュー日</dt>
-              <dd>2026年4月13日</dd>
+          <dl class="profile-facts" aria-label="プロフィール要約">
+            <div>
+              <dt>Debut</dt>
+              <dd>2026.04.13</dd>
             </div>
-            <div class="profile-row">
-              <dt>誕生日</dt>
-              <dd>5月17日</dd>
+            <div>
+              <dt>Birthday</dt>
+              <dd>05.17</dd>
             </div>
-            <div class="profile-row">
-              <dt>立ち絵</dt>
+            <div>
+              <dt>Mama</dt>
               <dd>とりうら 様</dd>
             </div>
-            <div class="profile-row">
-              <dt>総合タグ</dt>
-              <dd class="tag-value">#めあにめは</dd>
-            </div>
-            <div class="profile-row">
-              <dt>FAタグ</dt>
-              <dd class="tag-value">#めはあるか</dd>
-            </div>
           </dl>
+
+          <div class="hero__actions">
+            <a class="button button--primary" href="#links">活動リンク</a>
+            <a class="button button--ghost" href="index_main.html">トップへ戻る</a>
+          </div>
         </div>
-      </div><!-- /.right-col -->
-    </div><!-- /.top-row -->
 
-    <!-- すき♡ -->
-    <div class="card likes-card">
-      <h2>すき <span class="heart">♡</span></h2>
-      <div class="likes-grid">
-        <span class="like-item"> アイドル</span>
-        <span class="like-item"> きゅるりんってしてみて</span>
-        <span class="like-item">「LIFE！」</span>
-        <span class="like-item"> パペットスンスン</span>
-        <span class="like-item"> ポケモン</span>
+        <div class="hero__visual">
+          <span class="hero__badge">2026.04.13 debut</span>
+          <div class="hero__frame profile-hero__frame">
+            <div class="hero__halo" aria-hidden="true"></div>
+            <img class="hero__logo" src="assets/images/ui/logo/logo.png" alt="" aria-hidden="true">
+            <img class="hero__character profile-hero__character" src="assets/images/character/main/base/main-standing.png" alt="秩序めあのメイン立ち絵">
+          </div>
+        </div>
+      </section>
+
+      <section class="pickup profile-about" aria-labelledby="about-title">
+        <div class="section-head">
+          <p class="section-head__eyebrow">About</p>
+          <h2 id="about-title">自己紹介</h2>
+        </div>
+
+        <div class="profile-about__body">
+          <div class="profile-about__copy">
+            <p>秩序を守りたい気持ちと、ちょっとだけ乱したくなる気持ちのあいだで活動しているインターネットアイドル、秩序めあです。</p>
+            <p>配信やSNSを通して、みつけてくれた人の毎日に少しだけ楽しい時間を増やせるように、マイペースに発信しています。</p>
+            <p>はじめましての人も、いつもの人も、ここからめあのことを知ってくれたらうれしいです。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pickup profile-section" id="data">
+        <div class="section-head">
+          <p class="section-head__eyebrow">Profile Data</p>
+          <h2>基本情報</h2>
+        </div>
+
+        <div class="profile-data-grid">
+          <article class="pickup-card profile-data-card">
+            <span class="pickup-card__label">Name</span>
+            <strong>秩序めあ</strong>
+            <p>ちつじょ めあ / CHITSUJO MEA</p>
+          </article>
+          <article class="pickup-card profile-data-card">
+            <span class="pickup-card__label">Style</span>
+            <strong>インターネットアイドル</strong>
+            <p>配信、動画、SNSを中心に活動中</p>
+          </article>
+          <article class="pickup-card profile-data-card">
+            <span class="pickup-card__label">Birthday</span>
+            <strong>5月17日</strong>
+            <p>誕生日</p>
+          </article>
+          <article class="pickup-card profile-data-card">
+            <span class="pickup-card__label">Debut</span>
+            <strong>2026年4月13日</strong>
+            <p>活動開始日</p>
+          </article>
+          <article class="pickup-card profile-data-card">
+            <span class="pickup-card__label">Mama</span>
+            <strong>とりうら 様</strong>
+            <p>大好きママ</p>
+          </article>
+          <article class="pickup-card profile-data-card">
+            <span class="pickup-card__label">Platforms</span>
+            <strong>IRIAM / Twitch / X</strong>
+            <p>主な活動場所</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="profile-column-grid">
+        <section class="pickup profile-section" id="tags">
+          <div class="section-head">
+            <p class="section-head__eyebrow">Fan Tags</p>
+            <h2>タグ</h2>
+          </div>
+
+          <div class="profile-tag-list">
+            <article class="pickup-card profile-tag-card">
+              <span class="pickup-card__label">General</span>
+              <strong>#めあにめは</strong>
+              <p>感想、配信の話題、切り抜きなどの総合タグです。</p>
+            </article>
+            <article class="pickup-card profile-tag-card">
+              <span class="pickup-card__label">Fanart</span>
+              <strong>#めはあるか</strong>
+              <p>ファンアートにつけてもらえるとうれしいです。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="pickup profile-section">
+          <div class="section-head">
+            <p class="section-head__eyebrow">Favorite</p>
+            <h2>好きなもの</h2>
+          </div>
+
+          <div class="profile-chip-list" aria-label="好きなもの">
+            <span>きゅるりんってしてみて</span>
+            <span>iLiFE!【あいらいふ】</span>
+            <span>ポケモン</span>
+            <span>歌うこと</span>
+            <span>ゲーム</span>
+          </div>
+        </section>
       </div>
-    </div>
 
-  </div><!-- /.layout -->
+      <section class="pickup profile-section profile-guide" aria-labelledby="guide-title">
+        <div class="section-head">
+          <p class="section-head__eyebrow">Guideline</p>
+          <h2 id="guide-title">お願いごと</h2>
+          <p class="section-head__text">応援や投稿の前に、確認してもらえるとうれしいです。</p>
+        </div>
 
+        <ul class="profile-guide-list">
+          <li>ファンアートを投稿してくれるときは <span>#めはあるか</span> を付けてもらえるとうれしいです。</li>
+          <li>感想や切り抜きなどの総合タグは <span>#めあにめは</span> を使ってください。</li>
+          <li>不幸話やネガティブな身の上話には、僕も傷つくので反応できません。</li>
+          <li>DM は送って大丈夫ですが、お返事は基本できません。</li>
+          <li>相談ごとは、マシュマロ開設後にそちらへお願いします。</li>
+          <li>AI学習、無断使用、転載はお断りしています。</li>
+        </ul>
+      </section>
+
+      <section class="pickup profile-section" id="links">
+        <div class="section-head">
+          <p class="section-head__eyebrow">Accounts</p>
+          <h2>活動リンク</h2>
+          <p class="section-head__text">配信、SNS、グッズはこちらから</p>
+        </div>
+
+        <div class="hero__actions hero__actions--links profile-link-grid" aria-label="活動リンク">
+          <a class="button button--x" href="https://x.com/5_omochi_5?s=21" target="_blank" rel="noreferrer noopener">X</a>
+          <a class="button button--youtube" href="https://youtube.com/@chitsujomea?si=fU7vwQaMJaIpg37N" target="_blank" rel="noreferrer noopener">YouTube</a>
+          <a class="button button--twitch" href="https://www.twitch.tv/mamorumea" target="_blank" rel="noreferrer noopener">Twitch</a>
+          <a class="button button--iriam" href="https://web.iriam.app/s/user/A3y2xJIKjQ?uuid=2835536a" target="_blank" rel="noreferrer noopener">IRIAM</a>
+          <a class="button button--x" href="https://x.com/mamoruzomea?s=21" target="_blank" rel="noreferrer noopener">X Sub</a>
+          <a class="button button--tiktok" href="https://www.tiktok.com/@chitsujyomea?_r=1&_t=ZS-95HPJg1EiFY" target="_blank" rel="noreferrer noopener">TikTok</a>
+          <a class="button button--booth" href="https://5-omochi-5.booth.pm/" target="_blank" rel="noreferrer noopener">BOOTH</a>
+        </div>
+      </section>
+
+      <section class="link-band profile-link-band" aria-label="その他の導線">
+        <a class="link-band__card" href="index_main.html">
+          <span>Top</span>
+          <strong>トップページへ戻る</strong>
+        </a>
+        <a class="link-band__card" href="#top">
+          <span>Profile</span>
+          <strong>ページ上部へ</strong>
+        </a>
+        <a class="link-band__card link-band__card--booth" href="https://5-omochi-5.booth.pm/" target="_blank" rel="noreferrer noopener">
+          <span>BOOTH</span>
+          <strong>グッズを見る</strong>
+        </a>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/entry-logo.js" defer></script>
+  <script src="js/protect-ui.js" defer></script>
 </body>
 </html>
