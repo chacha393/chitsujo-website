@@ -185,6 +185,19 @@ button {
   height: 2px;
   border-radius: 999px;
   background: var(--ink-900);
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.site-header.is-menu-open .menu-button span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.site-header.is-menu-open .menu-button span:nth-child(2) {
+  opacity: 0;
+}
+
+.site-header.is-menu-open .menu-button span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 main {
@@ -215,6 +228,8 @@ main {
 }
 
 .hero__inner {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(440px, 1.1fr);
   align-items: center;
@@ -311,10 +326,13 @@ main {
 
 .hero__watermark {
   position: absolute;
-  top: 14%;
-  left: 0;
-  width: min(54vw, 540px);
-  opacity: 0.1;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: min(58vw, 720px);
+  opacity: 0.18;
+  filter: saturate(1.05);
+  transform: translate(-50%, -50%);
 }
 
 .debut-badge {
@@ -346,10 +364,11 @@ main {
 
 .hero__character {
   position: absolute;
-  right: -54px;
-  bottom: -26px;
+  top: 8px;
+  right: -28px;
+  bottom: auto;
   z-index: 2;
-  width: min(58vw, 700px);
+  width: min(52vw, 620px);
   max-width: none;
   filter: drop-shadow(0 34px 42px rgba(67, 111, 165, 0.18));
 }
@@ -620,6 +639,29 @@ main {
     display: none;
   }
 
+  .site-header.is-menu-open .site-nav {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.94);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(18px);
+  }
+
+  .site-header.is-menu-open .site-nav a {
+    min-width: 0;
+    width: 100%;
+    border-color: var(--line);
+    background: rgba(255, 255, 255, 0.84);
+  }
+
   .menu-button {
     display: grid;
   }
@@ -642,7 +684,7 @@ main {
 
   .hero__visual {
     order: 1;
-    min-height: 430px;
+    min-height: 460px;
     margin-top: 0;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.94);
@@ -685,10 +727,11 @@ main {
   }
 
   .hero__watermark {
-    top: 16px;
+    top: 42%;
     left: 50%;
-    width: 320px;
-    transform: translateX(-50%);
+    width: min(82vw, 430px);
+    opacity: 0.2;
+    transform: translate(-50%, -50%);
   }
 
   .debut-badge {
@@ -706,9 +749,10 @@ main {
 
   .hero__character {
     right: 50%;
-    bottom: -18px;
-    width: 460px;
-    transform: translateX(54%);
+    top: 12px;
+    bottom: auto;
+    width: min(88vw, 390px);
+    transform: translateX(52%);
   }
 
   .social-section {
@@ -820,11 +864,12 @@ main {
   }
 
   .hero__visual {
-    min-height: 390px;
+    min-height: 410px;
   }
 
   .hero__character {
-    width: 420px;
+    top: 14px;
+    width: min(90vw, 360px);
   }
 
   .hero h1 {
