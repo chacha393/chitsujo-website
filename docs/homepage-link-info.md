@@ -9,7 +9,7 @@
 
 | 表示名 | リンク先 | 用途 | 優先度 |
 | --- | --- | --- | --- |
-| Top | `index_main.html` | 公式トップ | 高 |
+| Top | `index.html` | 公式トップ | 高 |
 | Profile | `profile.html` | 詳しいプロフィール | 高 |
 | Gallery | `gallery.html` | 描いていただいた作品 | 高 |
 

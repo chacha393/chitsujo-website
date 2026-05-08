@@ -32,6 +32,7 @@
       </a>
 
       <nav class="site-nav" aria-label="ページナビゲーション">
+        <a href="#stream">Stream</a>
         <a href="#pickup">Pick Up</a>
         <!-- TODO: Diary is postponed for now.
         <a href="#diary">Diary</a>
@@ -66,6 +67,57 @@
             <img class="hero__logo" src="assets/images/ui/logo/logo.png" alt="" aria-hidden="true">
             <img class="hero__character" src="assets/images/character/main/base/main-standing.png" alt="秩序めあのメイン立ち絵">
           </div>
+        </div>
+      </section>
+
+      <section class="stream-links" id="stream" aria-labelledby="stream-title">
+        <div class="section-head">
+          <p class="section-head__eyebrow">Live &amp; Stream</p>
+          <h2 id="stream-title">配信リンク</h2>
+          <p class="section-head__text">IRIAMはアプリで見に来て確認してね。Twitchは配信状態をAPIで確認します。</p>
+        </div>
+
+        <div class="stream-links__grid">
+          <a
+            class="stream-card stream-card--iriam"
+            href="https://web.iriam.app/s/user/A3y2xJIKjQ?uuid=2835536a"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <span class="stream-card__mark" aria-hidden="true">◇</span>
+            <div class="stream-card__body">
+              <span class="stream-card__label">IRIAM</span>
+              <h3>アプリで見に来て確認してね</h3>
+              <p>IRIAMのプロフィールへ移動します。</p>
+              <span class="stream-button">IRIAMで見る ↗</span>
+            </div>
+          </a>
+
+          <article
+            class="stream-card stream-card--twitch"
+            data-twitch-status-card
+            data-twitch-status-endpoint="/api/twitch-status?user_login=mamorumea"
+            data-twitch-channel-url="https://www.twitch.tv/mamorumea"
+            data-state="loading"
+          >
+            <span class="stream-card__mark stream-card__mark--twitch" aria-hidden="true">▱</span>
+            <div class="stream-card__body">
+              <span class="stream-card__label">Twitch</span>
+              <div class="stream-card__status-row">
+                <span class="stream-card__status" data-twitch-status-label>確認中</span>
+                <span class="stream-card__api">Twitch API</span>
+              </div>
+              <h3 data-twitch-status-title>Twitchの配信状況を確認します。</h3>
+              <p data-twitch-status-meta>配信中ならサムネイルを表示します。</p>
+              <a class="stream-button stream-button--twitch" href="https://www.twitch.tv/mamorumea" target="_blank" rel="noreferrer noopener" data-twitch-cta>
+                Twitchで見る ↗
+              </a>
+            </div>
+            <a class="stream-card__thumb" href="https://www.twitch.tv/mamorumea" target="_blank" rel="noreferrer noopener" data-twitch-thumbnail-link>
+              <img alt="" data-twitch-thumbnail hidden>
+              <span data-twitch-placeholder>配信中ならサムネイルを表示</span>
+            </a>
+          </article>
         </div>
       </section>
 
@@ -157,6 +209,7 @@
 
   <script src="js/entry-logo.js" defer></script>
   <script src="js/protect-ui.js" defer></script>
+  <script src="js/twitch-status.js" defer></script>
   <!-- TODO: Diary is postponed for now.
   <script src="js/diary.js" defer></script>
   -->

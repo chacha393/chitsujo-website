@@ -1,0 +1,14 @@
+{
+  "name": "chitsujo-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-pages.mjs",
+    "dev": "npm run build && wrangler pages dev _site",
+    "deploy": "npm run build && wrangler pages deploy _site --project-name chitsujo-website"
+  },
+  "devDependencies": {
+    "wrangler": "^4.88.0"
+  }
+}

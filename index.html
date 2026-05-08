@@ -1,79 +1,219 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>準備中 ☁️</title>
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/maintenance.css">
+  <meta
+    name="description"
+    content="秩序めあのプロフィール、配信リンク、SNS、タグをまとめたトップページです。"
+  >
+  <title>秩序めあ | CHITSUJO MEA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="css/top-home.css">
 </head>
-<body> 
+<body>
+  <div class="site-stars" aria-hidden="true"></div>
 
-  <div class="splash" id="splash" aria-hidden="true">
-  <img src="assets/images/ui/logo/logo.png" alt="秩序めあのロゴ" class="splash-logo" width="200" height="200">
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="秩序めあ トップページ">
+        <img src="assets/images/ui/logo/logo.png" alt="秩序めあ ロゴ" width="72" height="72">
+        <span>
+          <strong>CHITSUJO MEA</strong>
+          <small>/ 秩序めあ</small>
+        </span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="ページナビゲーション">
+        <a href="#stream">Stream</a>
+        <a href="#pickup">Pick Up</a>
+        <a href="#profile">Profile</a>
+        <a href="#links">Links</a>
+        <a href="https://5-omochi-5.booth.pm/" target="_blank" rel="noreferrer noopener">BOOTH</a>
+      </nav>
+
+      <button class="menu-button" type="button" aria-label="メニュー" aria-controls="site-nav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="home" aria-label="秩序めあ メインビジュアル">
+        <img class="hero__watermark" src="assets/images/ui/logo/logo.png" alt="" aria-hidden="true">
+
+        <div class="hero__copy">
+          <h1><span>秩序</span><span>めあ</span></h1>
+          <div class="hero__rule" aria-hidden="true">✦ ・・・・ ✦</div>
+          <p class="hero__catch">秩序を〜乱すな〜<em>!</em> ピピーッ<em>!</em> ⚡</p>
+          <p class="hero__lead">
+            みつけてくれてありがとう。歌うこととゲームが好きな秩序めあです。<br>
+            きみの毎日に、ちょっと楽しい秩序とときめきを届けられたらうれしいです。
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#profile">Profile</a>
+            <a class="button button--secondary" href="#links">Links</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <span class="debut-badge">
+            <small>2026.04.13</small>
+            debut
+          </span>
+          <img
+            class="hero__character"
+            src="assets/images/character/main/base/main-standing.png"
+            alt="秩序めあの立ち絵"
+          >
+        </div>
+      </section>
+
+      <section class="stream-panel" id="stream" aria-labelledby="stream-title">
+        <h2 id="stream-title">配信リンク <span>/ Live &amp; Stream</span></h2>
+
+        <div class="stream-grid">
+          <a
+            class="stream-card stream-card--iriam"
+            href="https://web.iriam.app/s/user/A3y2xJIKjQ?uuid=2835536a"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <span class="stream-card__avatar">
+              <img src="assets/images/ui/icons/social/iriam.png" alt="" aria-hidden="true">
+            </span>
+            <span class="stream-card__body">
+              <strong>IRIAM</strong>
+              <span>アプリで見に来て確認してね</span>
+              <span class="stream-button">IRIAMで見る ↗</span>
+            </span>
+          </a>
+
+          <article
+            class="stream-card stream-card--twitch"
+            data-twitch-status-card
+            data-twitch-status-endpoint="/api/twitch-status?user_login=mamorumea"
+            data-twitch-channel-url="https://www.twitch.tv/mamorumea"
+            data-state="loading"
+          >
+            <span class="twitch-mark" aria-hidden="true">
+              <img src="assets/images/ui/icons/social/twitch.png" alt="">
+            </span>
+            <div class="stream-card__body">
+              <strong>Twitch</strong>
+              <div class="status-row">
+                <span class="status-pill" data-twitch-status-label>確認中</span>
+              </div>
+              <span data-twitch-status-title>Twitchの配信状況を確認します。</span>
+              <span class="stream-meta" data-twitch-status-meta>配信中ならサムネイルを表示します。</span>
+              <a class="stream-button stream-button--twitch" href="https://www.twitch.tv/mamorumea" target="_blank" rel="noreferrer noopener" data-twitch-cta>
+                Twitchで見る ↗
+              </a>
+            </div>
+
+            <a class="twitch-thumb" href="https://www.twitch.tv/mamorumea" target="_blank" rel="noreferrer noopener" data-twitch-thumbnail-link>
+              <img alt="" data-twitch-thumbnail hidden>
+              <span data-twitch-placeholder>STREAM STANDBY</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="dashboard-grid" aria-label="リンクとプロフィール">
+        <section class="info-panel info-panel--links" id="links" aria-labelledby="links-title">
+          <h2 id="links-title">SNS / Links</h2>
+          <div class="link-grid">
+            <a class="link-tile link-tile--x" href="https://x.com/5_omochi_5?s=21" target="_blank" rel="noreferrer noopener"><strong><img src="assets/images/ui/icons/social/x.png" alt="" loading="lazy" decoding="async"></strong><span>X</span></a>
+            <a class="link-tile link-tile--youtube" href="https://youtube.com/@chitsujomea?si=fU7vwQaMJaIpg37N" target="_blank" rel="noreferrer noopener"><strong><img src="assets/images/ui/icons/social/youtube.png" alt="" loading="lazy" decoding="async"></strong><span>YouTube</span></a>
+            <a class="link-tile link-tile--twitch" href="https://www.twitch.tv/mamorumea" target="_blank" rel="noreferrer noopener"><strong><img src="assets/images/ui/icons/social/twitch.png" alt="" loading="lazy" decoding="async"></strong><span>Twitch</span></a>
+            <a class="link-tile link-tile--iriam" href="https://web.iriam.app/s/user/A3y2xJIKjQ?uuid=2835536a" target="_blank" rel="noreferrer noopener"><strong><img src="assets/images/ui/icons/social/iriam.png" alt="" loading="lazy" decoding="async"></strong><span>IRIAM</span></a>
+            <a class="link-tile link-tile--tiktok" href="https://www.tiktok.com/@chitsujyomea?_r=1&_t=ZS-95HPJg1EiFY" target="_blank" rel="noreferrer noopener"><strong><img src="assets/images/ui/icons/social/tiktok.png" alt="" loading="lazy" decoding="async"></strong><span>TikTok</span></a>
+            <a class="link-tile link-tile--booth" href="https://5-omochi-5.booth.pm/" target="_blank" rel="noreferrer noopener"><strong><img src="assets/images/ui/icons/social/booth.png" alt="" loading="lazy" decoding="async"></strong><span>BOOTH</span></a>
+          </div>
+        </section>
+
+        <section class="info-panel" id="pickup" aria-labelledby="pickup-title">
+          <h2 id="pickup-title">Pick Up</h2>
+          <div class="pickup-grid">
+            <article class="pickup-card pickup-card--blue">
+              <strong>#めあにめは</strong>
+              <span>感想・応援用のタグです。</span>
+            </article>
+            <article class="pickup-card pickup-card--purple">
+              <strong>#めはあるか</strong>
+              <span>ファンアート用のタグです。</span>
+            </article>
+            <article class="pickup-card pickup-card--pink">
+              <strong>とりうら様</strong>
+              <span>ママ</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="info-panel" id="profile" aria-labelledby="profile-title">
+          <h2 id="profile-title">Profile</h2>
+          <dl class="profile-list">
+            <div><dt>デビュー日</dt><dd>2026.04.13</dd></div>
+            <div><dt>誕生日</dt><dd>5月5日</dd></div>
+            <div><dt>好きなこと</dt><dd>歌うこと / ゲーム</dd></div>
+            <div><dt>タグ</dt><dd>#秩序めあ　#めあにめは　#めはあるか</dd></div>
+          </dl>
+        </section>
+      </section>
+
+      <p class="copyright">✦ ・・・・・ © CHITSUJO MEA All Rights Reserved. ・・・・・ ✦</p>
+    </main>
   </div>
 
-  <div class="clouds">
-    <div class="cloud"></div>
-    <div class="cloud"></div>
-    <div class="cloud"></div>
-    <div class="cloud"></div>
-  </div>
-
-  <div class="stars">
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-  </div>
-
-  <div class="card">
-    <img src="assets/images/character/mini/mini-character.png" alt="ミニキャラ" class="character">
-
-    <h1><span>ただいま準備中</span>です🌀</h1>
-    <p class="sub">
-      もう少しだけ待っていてね💙
-    </p>
-
-    <div class="tags">
-      <span class="tag">🚧 絶賛制作中</span>
-      <span class="tag">🎨 デザイン中</span>
-      <span class="tag">🦕 もうすぐ！</span>
-    </div>
-
-    <div class="progress-label">
-      <span>🐾 進捗</span>
-      <span>30%</span>
-    </div>
-
-    <div class="progress-wrap">
-      <div class="progress-bar"></div>
-    </div>
-
-    <div class="wave-wrap">
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-      <div class="wave-dot"></div>
-    </div>
-  </div>
-
-  <p class="footer">©2026 秩序めあ</p>
+  <nav class="mobile-dock" aria-label="スマホ固定ナビゲーション">
+    <a href="#home">Home</a>
+    <a href="#stream">Stream</a>
+    <a href="#links">Links</a>
+    <a href="https://5-omochi-5.booth.pm/" target="_blank" rel="noreferrer noopener">BOOTH</a>
+  </nav>
 
   <script>
-    window.addEventListener('load', function()
-    {
-      setTimeout(function() {
-        document.getElementById('splash').classList.add('hide');
-        document.body.classList.add('content-visible');
-      }, 1800);
-    });
+    const siteHeader = document.querySelector(".site-header");
+    const menuButton = document.querySelector(".menu-button");
+    const siteNav = document.querySelector(".site-nav");
+
+    if (siteHeader && menuButton && siteNav) {
+      const setMenuOpen = (isOpen) => {
+        siteHeader.classList.toggle("is-menu-open", isOpen);
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      };
+
+      menuButton.addEventListener("click", () => {
+        setMenuOpen(!siteHeader.classList.contains("is-menu-open"));
+      });
+
+      siteNav.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+          setMenuOpen(false);
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          setMenuOpen(false);
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!siteHeader.contains(event.target)) {
+          setMenuOpen(false);
+        }
+      });
+    }
   </script>
-
   <script src="js/entry-logo.js" defer></script>
-
+  <script src="js/protect-ui.js" defer></script>
+  <script src="js/twitch-status.js" defer></script>
 </body>
 </html>

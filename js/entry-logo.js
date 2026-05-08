@@ -11,6 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.has("noEntryLogo")) {
+    revealContent();
+    return;
+  }
+
   const referrer = document.referrer;
   let isExternalEntry = !referrer;
 
